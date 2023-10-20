@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Phonebill
+	xmlns:xsi=""
+    xsi:schemaLocation="">
+	
+	<CustomerInformation>
+			<firstName>Steve</firstName>
+			<lastName>Luke</lastName>
+			<street>1245 Main Street</street>
+			<city>Duluth</city>
+			<state>GA</state>
+			<zipCode>30096</zipCode>
+			<accountNumber customerID="00001719228"></accountNumber>
+	</CustomerInformation>
+	<Billing>
+		<invoice uniqueID="004194129">
+			<invoiceDate timestamp="07012011"></invoiceDate>
+			<previousCharges>
+				<previousAccountBalance>86.26</previousAccountBalance>
+				<paymentsRecieved>0.00</paymentsRecieved>
+				<otherChargesandCredits>1.67</otherChargesandCredits>
+				<balanceForward>86.26</balanceForward>
+			</previousCharges>
+			<newCharges>
+				<wireless>86.52</wireless>
+				<longDistance>20.00</longDistance>
+				<Internet>103.00</Internet>
+				<currentInstallmentsDue>350.00</currentInstallmentsDue>
+				<otherNewAccountCharges>1.67</otherNewAccountCharges>
+				<newChargesBalance>561.19</newChargesBalance>
+			</newCharges>
+			<pastDueAmmount prevAmount="86.26"></pastDueAmmount>
+			<totalAmountDue currAmount="561.19"></totalAmountDue>
+		<invoice>
+	</Billing>
+	<CompanyContactInformation>
+		<street>10681 Foothill Blvd</street>
+		<unitNumber>Suite 100</unitNumber>
+		<city>Rancho Cucamonga</city>
+		<state>CA</state>
+		<zipCode>91730</zipCode>
+		<phone>+1 909 980-1034 </phone>
+		<fax>+1 909 944-3995</fax>
+		<email>sales@advantage360.com</email>
+	</CompanyContactInformation>
+</Phonebill>
