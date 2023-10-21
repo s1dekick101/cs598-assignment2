@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
   <xs:element name="Billing">
     <xs:complexType>
       <xs:sequence>
@@ -21,22 +22,26 @@
                     <xs:element name="previousCharges">
                       <xs:complexType>
                         <xs:sequence>
-                          <xs:element type="xs:float" name="previousAccountBalance"/>
-                          <xs:element type="xs:float" name="paymentsRecieved"/>
-                          <xs:element type="xs:float" name="otherChargesandCredits"/>
-                          <xs:element type="xs:float" name="balanceForward"/>
+							<xs:restriction base="xs:float">
+							  <xs:element type="xs:float" name="previousAccountBalance"/>
+							  <xs:element type="xs:float" name="paymentsRecieved"/>
+							  <xs:element type="xs:float" name="otherChargesandCredits"/>
+							  <xs:element type="xs:float" name="balanceForward"/>
+							</xs:restriction>
                         </xs:sequence>
                       </xs:complexType>
                     </xs:element>
                     <xs:element name="newCharges">
                       <xs:complexType>
                         <xs:sequence>
-                          <xs:element type="xs:float" name="wireless"/>
-                          <xs:element type="xs:float" name="longDistance"/>
-                          <xs:element type="xs:float" name="Internet"/>
-                          <xs:element type="xs:float" name="currentInstallmentsDue"/>
-                          <xs:element type="xs:float" name="otherNewAccountCharges"/>
-                          <xs:element type="xs:float" name="newChargesBalance"/>
+							<xs:restriction base="xs:float">
+							  <xs:element type="xs:float" name="wireless"/>
+							  <xs:element type="xs:float" name="longDistance"/>
+							  <xs:element type="xs:float" name="Internet"/>
+							  <xs:element type="xs:float" name="currentInstallmentsDue"/>
+							  <xs:element type="xs:float" name="otherNewAccountCharges"/>
+							  <xs:element type="xs:float" name="newChargesBalance"/>
+							</xs:restriction>
                         </xs:sequence>
                       </xs:complexType>
                     </xs:element>
@@ -65,12 +70,16 @@
               <xs:element name="customerInformation">
                 <xs:complexType>
                   <xs:sequence>
-                    <xs:element type="xs:string" name="firstName"/>
-                    <xs:element type="xs:string" name="lastName"/>
-                    <xs:element type="xs:string" name="street"/>
-                    <xs:element type="xs:string" name="city"/>
-                    <xs:element type="xs:string" name="state"/>
-                    <xs:element type="xs:short" name="zipCode"/>
+					<xs:restriction base="xs:string">
+						<xs:element type="xs:string" name="firstName"/>
+						<xs:element type="xs:string" name="lastName"/>
+						<xs:element type="xs:string" name="street"/>
+						<xs:element type="xs:string" name="city"/>
+						<xs:element type="xs:string" name="state"/>
+					</xs:restriction>
+					<xs:restriction base="xs:int">
+						<xs:element type="xs:int" name="zipCode"/>
+					</xs:restriction>
                     <xs:element name="accountNumber">
                       <xs:complexType>
                         <xs:simpleContent>
@@ -86,15 +95,19 @@
               <xs:element name="CompanyContactInformation">
                 <xs:complexType>
                   <xs:sequence>
-                    <xs:element type="xs:string" name="companyName"/>
-                    <xs:element type="xs:string" name="street"/>
-                    <xs:element type="xs:string" name="unitNumber"/>
-                    <xs:element type="xs:string" name="city"/>
-                    <xs:element type="xs:string" name="state"/>
-                    <xs:element type="xs:int" name="zipCode"/>
-                    <xs:element type="xs:string" name="phone"/>
-                    <xs:element type="xs:string" name="fax"/>
-                    <xs:element type="xs:string" name="email"/>
+					<xs:restriction base="xs:string">
+						<xs:element type="xs:string" name="companyName"/>
+						<xs:element type="xs:string" name="street"/>
+						<xs:element type="xs:string" name="unitNumber"/>
+						<xs:element type="xs:string" name="city"/>
+						<xs:element type="xs:string" name="state"/>
+						<xs:element type="xs:string" name="phone"/>
+						<xs:element type="xs:string" name="fax"/>
+						<xs:element type="xs:string" name="email"/>
+					</xs:restriction>
+					<xs:restriction base="xs:int">
+						<xs:element type="xs:int" name="zipCode"/>
+					</xs:restriction>
                   </xs:sequence>
                 </xs:complexType>
               </xs:element>
