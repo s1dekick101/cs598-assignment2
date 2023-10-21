@@ -1,20 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Phonebill
-	xmlns:xsi=""
-    xsi:schemaLocation="">
+<Billing
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="https://github.com/s1dekick101/cs598-assignment2/blob/main/Part1/cellphone.xsd">
 	
-	<CustomerInformation>
-			<firstName>Steve</firstName>
-			<lastName>Luke</lastName>
-			<street>1245 Main Street</street>
-			<city>Duluth</city>
-			<state>GA</state>
-			<zipCode>30096</zipCode>
-			<accountNumber customerID="00001719228"></accountNumber>
-	</CustomerInformation>
-	<Billing>
+	
+	<Phonebill>
+		<invoiceDate timestamp="07012011"></invoiceDate>
 		<invoice uniqueID="004194129">
-			<invoiceDate timestamp="07012011"></invoiceDate>
 			<previousCharges>
 				<previousAccountBalance>86.26</previousAccountBalance>
 				<paymentsRecieved>0.00</paymentsRecieved>
@@ -32,15 +24,25 @@
 			<pastDueAmmount prevAmount="86.26"></pastDueAmmount>
 			<totalAmountDue currAmount="561.19"></totalAmountDue>
 		<invoice>
-	</Billing>
-	<CompanyContactInformation>
-		<street>10681 Foothill Blvd</street>
-		<unitNumber>Suite 100</unitNumber>
-		<city>Rancho Cucamonga</city>
-		<state>CA</state>
-		<zipCode>91730</zipCode>
-		<phone>+1 909 980-1034 </phone>
-		<fax>+1 909 944-3995</fax>
-		<email>sales@advantage360.com</email>
-	</CompanyContactInformation>
-</Phonebill>
+		<customerInformation>
+			<firstName>Steve</firstName>
+			<lastName>Luke</lastName>
+			<street>1245 Main Street</street>
+			<city>Duluth</city>
+			<state>GA</state>
+			<zipCode>30096</zipCode>
+			<accountNumber customerID="00001719228"></accountNumber>
+		</customerInformation>
+		<CompanyContactInformation>
+			<companyName>Advantage 360</companyName>
+			<street>10681 Foothill Blvd</street>
+			<unitNumber>Suite 100</unitNumber>
+			<city>Rancho Cucamonga</city>
+			<state>CA</state>
+			<zipCode>91730</zipCode>
+			<phone>+1 909 980-1034 </phone>
+			<fax>+1 909 944-3995</fax>
+			<email>sales@advantage360.com</email>
+		</CompanyContactInformation>
+	</Phonebill>
+</Billing>
