@@ -6,7 +6,7 @@
 	
 	<Phonebill>
 		<invoiceDate timestamp="07012011"></invoiceDate>
-		<invoice uniqueID="004194129">
+		<invoiceNumber uniqueID="004194129">
 			<previousCharges>
 				<previousAccountBalance>86.26</previousAccountBalance>
 				<paymentsRecieved>0.00</paymentsRecieved>
@@ -23,7 +23,7 @@
 			</newCharges>
 			<pastDueAmmount prevAmount="86.26"></pastDueAmmount>
 			<totalAmountDue currAmount="561.19"></totalAmountDue>
-		<invoice>
+		</invoiceNumber>
 		<customerInformation>
 			<firstName>Steve</firstName>
 			<lastName>Luke</lastName>
@@ -39,10 +39,10 @@
 			<unitNumber>Suite 100</unitNumber>
 			<city>Rancho Cucamonga</city>
 			<state>CA</state>
-			<zipCode>91730</zipCode>
 			<phone>+1 909 980-1034 </phone>
 			<fax>+1 909 944-3995</fax>
 			<email>sales@advantage360.com</email>
+			<zipCode>91730</zipCode>
 		</CompanyContactInformation>
 	</Phonebill>
 </Billing>

@@ -4,87 +4,79 @@
   <xs:element name="Billing">
     <xs:complexType>
       <xs:sequence>
-        <xs:element name="Phonebill">
+        <xs:element name="Phonebill" maxOccurs="unbounded">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="invoiceDate">
+              <xs:element name="invoiceDate" minOccurs="1" maxOccurs="unbounded">
                 <xs:complexType>
                   <xs:simpleContent>
                     <xs:extension base="xs:string">
-                      <xs:attribute type="xs:int" name="timestamp"/>
+                      <xs:attribute type="xs:int" name="timestamp" use="required"/>
                     </xs:extension>
                   </xs:simpleContent>
                 </xs:complexType>
               </xs:element>
-              <xs:element name="invoiceNumber">
+              <xs:element name="invoiceNumber" minOccurs="1" maxOccurs="unbounded">
                 <xs:complexType>
                   <xs:sequence>
-                    <xs:element name="previousCharges">
+                    <xs:element name="previousCharges" minOccurs="1" maxOccurs="unbounded">
                       <xs:complexType>
                         <xs:sequence>
-							<xs:restriction base="xs:float">
 							  <xs:element type="xs:float" name="previousAccountBalance"/>
-							  <xs:element type="xs:float" name="paymentsRecieved"/>
-							  <xs:element type="xs:float" name="otherChargesandCredits"/>
-							  <xs:element type="xs:float" name="balanceForward"/>
-							</xs:restriction>
+							  <xs:element type="xs:float" name="paymentsRecieved" minOccurs="1" maxOccurs="1"/>
+							  <xs:element type="xs:float" name="otherChargesandCredits" minOccurs="1" maxOccurs="1"/>
+							  <xs:element type="xs:float" name="balanceForward" minOccurs="1" maxOccurs="1"/>
                         </xs:sequence>
                       </xs:complexType>
                     </xs:element>
-                    <xs:element name="newCharges">
+                    <xs:element name="newCharges" minOccurs="1" maxOccurs="1">
                       <xs:complexType>
                         <xs:sequence>
-							<xs:restriction base="xs:float">
-							  <xs:element type="xs:float" name="wireless"/>
-							  <xs:element type="xs:float" name="longDistance"/>
-							  <xs:element type="xs:float" name="Internet"/>
-							  <xs:element type="xs:float" name="currentInstallmentsDue"/>
-							  <xs:element type="xs:float" name="otherNewAccountCharges"/>
-							  <xs:element type="xs:float" name="newChargesBalance"/>
-							</xs:restriction>
+							  <xs:element type="xs:float" name="wireless" minOccurs="1" maxOccurs="1"/>
+							  <xs:element type="xs:float" name="longDistance" minOccurs="1" maxOccurs="1"/>
+							  <xs:element type="xs:float" name="Internet" minOccurs="1" maxOccurs="1"/>
+							  <xs:element type="xs:float" name="currentInstallmentsDue" minOccurs="1" maxOccurs="1"/>
+							  <xs:element type="xs:float" name="otherNewAccountCharges" minOccurs="1" maxOccurs="1"/>
+							  <xs:element type="xs:float" name="newChargesBalance" minOccurs="1" maxOccurs="1"/>
                         </xs:sequence>
                       </xs:complexType>
                     </xs:element>
-                    <xs:element name="pastDueAmmount">
+                    <xs:element name="pastDueAmmount" minOccurs="1" maxOccurs="1">
                       <xs:complexType>
                         <xs:simpleContent>
                           <xs:extension base="xs:string">
-                            <xs:attribute type="xs:float" name="prevAmount"/>
+                            <xs:attribute type="xs:float" name="prevAmount" use="required"/>
                           </xs:extension>
                         </xs:simpleContent>
                       </xs:complexType>
                     </xs:element>
-                    <xs:element name="totalAmountDue">
+                    <xs:element name="totalAmountDue" minOccurs="1" maxOccurs="1">
                       <xs:complexType>
                         <xs:simpleContent>
                           <xs:extension base="xs:string">
-                            <xs:attribute type="xs:float" name="currAmount"/>
+                            <xs:attribute type="xs:float" name="currAmount" use="required"/>
                           </xs:extension>
                         </xs:simpleContent>
                       </xs:complexType>
                     </xs:element>
                   </xs:sequence>
-                  <xs:attribute type="xs:int" name="uniqueID"/>
+                  <xs:attribute type="xs:int" name="uniqueID" use="required"/>
                 </xs:complexType>
               </xs:element>
-              <xs:element name="customerInformation">
+              <xs:element name="customerInformation" minOccurs="1" maxOccurs="1">
                 <xs:complexType>
                   <xs:sequence>
-					<xs:restriction base="xs:string">
-						<xs:element type="xs:string" name="firstName"/>
-						<xs:element type="xs:string" name="lastName"/>
-						<xs:element type="xs:string" name="street"/>
-						<xs:element type="xs:string" name="city"/>
-						<xs:element type="xs:string" name="state"/>
-					</xs:restriction>
-					<xs:restriction base="xs:int">
-						<xs:element type="xs:int" name="zipCode"/>
-					</xs:restriction>
-                    <xs:element name="accountNumber">
+						<xs:element type="xs:string" name="firstName" minOccurs="1" maxOccurs="1"/>
+						<xs:element type="xs:string" name="lastName" minOccurs="1" maxOccurs="1"/>
+						<xs:element type="xs:string" name="street" minOccurs="1" maxOccurs="1"/>
+						<xs:element type="xs:string" name="city" minOccurs="1" maxOccurs="1"/>
+						<xs:element type="xs:string" name="state" minOccurs="1" maxOccurs="1"/>
+						<xs:element type="xs:int" name="zipCode" minOccurs="1" maxOccurs="1"/>
+                    <xs:element name="accountNumber" minOccurs="1" maxOccurs="1">
                       <xs:complexType>
                         <xs:simpleContent>
                           <xs:extension base="xs:string">
-                            <xs:attribute type="xs:int" name="customerID"/>
+                            <xs:attribute type="xs:int" name="customerID" use="required"/>
                           </xs:extension>
                         </xs:simpleContent>
                       </xs:complexType>
@@ -92,22 +84,30 @@
                   </xs:sequence>
                 </xs:complexType>
               </xs:element>
-              <xs:element name="CompanyContactInformation">
+              <xs:element name="CompanyContactInformation" minOccurs="1" maxOccurs="1">
                 <xs:complexType>
                   <xs:sequence>
-					<xs:restriction base="xs:string">
-						<xs:element type="xs:string" name="companyName"/>
-						<xs:element type="xs:string" name="street"/>
-						<xs:element type="xs:string" name="unitNumber"/>
-						<xs:element type="xs:string" name="city"/>
-						<xs:element type="xs:string" name="state"/>
-						<xs:element type="xs:string" name="phone"/>
-						<xs:element type="xs:string" name="fax"/>
-						<xs:element type="xs:string" name="email"/>
-					</xs:restriction>
-					<xs:restriction base="xs:int">
-						<xs:element type="xs:int" name="zipCode"/>
-					</xs:restriction>
+						<xs:element name="companyName" minOccurs="1" maxOccurs="1">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="Advantage 360"/>
+								</xs:restriction>
+							</xs:simpleType>
+                        </xs:element>								
+						<xs:element type="xs:string" name="street" minOccurs="1" maxOccurs="1"/>
+						<xs:element type="xs:string" name="unitNumber" minOccurs="1" maxOccurs="1"/>
+						<xs:element type="xs:string" name="city" minOccurs="1" maxOccurs="1"/>
+						<xs:element type="xs:string" name="state" minOccurs="1" maxOccurs="1"/>
+						<xs:element type="xs:string" name="phone" minOccurs="1" maxOccurs="1"/>
+						<xs:element type="xs:string" name="fax" minOccurs="1" maxOccurs="1"/>
+						<xs:element name="email" minOccurs="1" maxOccurs="1">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="sales@advantage360.com"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element type="xs:int" name="zipCode" minOccurs="1" maxOccurs="1"/>
                   </xs:sequence>
                 </xs:complexType>
               </xs:element>
